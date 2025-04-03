@@ -2,76 +2,144 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Song Minsub's Portfolio</title>
   <style>
+    :root {
+      --primary: #4a90e2;
+      --bg: #f9f9fb;
+      --card-bg: #ffffff;
+      --text: #333333;
+      --accent: #e6efff;
+    }
+    * {
+      box-sizing: border-box;
+    }
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f4f4f4;
       margin: 0;
-      padding: 40px;
-      color: #333;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+    }
+    header {
+      background: var(--primary);
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+    .intro {
+      margin-top: 10px;
+      font-size: 1.2em;
+    }
+    nav {
+      background: white;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      padding: 10px 20px;
+      text-align: center;
+    }
+    nav a {
+      margin: 0 15px;
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
     }
     .container {
-      max-width: 900px;
-      margin: 0 auto;
-      background: white;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-    h1, h2 {
-      color: #2c3e50;
-    }
-    ul {
-      list-style-type: disc;
-      padding-left: 20px;
+      max-width: 960px;
+      margin: 40px auto;
+      padding: 0 20px;
     }
     .section {
-      margin-bottom: 40px;
+      margin-bottom: 50px;
     }
-    a {
-      color: #007acc;
-      text-decoration: none;
+    .section h2 {
+      border-left: 6px solid var(--primary);
+      padding-left: 10px;
+      margin-bottom: 20px;
     }
-    a:hover {
-      text-decoration: underline;
+    .badges span {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--primary);
+      padding: 5px 10px;
+      border-radius: 999px;
+      margin: 5px 5px 0 0;
+      font-size: 0.95em;
+    }
+    .project-card {
+      background: var(--card-bg);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    .project-card h3 {
+      margin-top: 0;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #888;
     }
   </style>
 </head>
 <body>
-  <div class="container">
+  <header>
     <h1>👨‍💻 Song Minsub</h1>
-    <p>안녕하세요! C# WPF 기반의 백엔드 위주로 작업하는 개발자입니다.<br>
-    기능 중심의 소프트웨어 구현과 구조화에 집중하며, 필요한 경우 기본적인 화면 구성도 직접 구현합니다.</p>
+    <div class="intro">백엔드 중심 개발자 · 기능에 집중하며 간단한 WPF UI도 직접 구현합니다</div>
+  </header>
 
-    <div class="section">
+  <nav>
+    <a href="#skills">기술 스택</a>
+    <a href="#projects">프로젝트</a>
+    <a href="#links">링크</a>
+  </nav>
+
+  <div class="container">
+    <div class="section" id="skills">
       <h2>🛠️ 기술 스택</h2>
-      <ul>
-        <li>C#, .NET Framework (4.7.2)</li>
-        <li>WPF (MVVM 구조 포함)</li>
-        <li>MSSQL / T-SQL</li>
-        <li>TCP/UDP Socket 통신</li>
-        <li>Git (TortoiseGit 사용)</li>
-      </ul>
+      <div class="badges">
+        <span>C#</span>
+        <span>.NET Framework 4.7.2</span>
+        <span>WPF (MVVM)</span>
+        <span>MSSQL / T-SQL</span>
+        <span>TCP/UDP</span>
+        <span>Git (TortoiseGit)</span>
+      </div>
     </div>
 
-    <div class="section">
+    <div class="section" id="projects">
       <h2>📂 프로젝트 예시</h2>
-      <ul>
-        <li><strong>WPF 기반 알림 시스템</strong> – TCP 통신 기반의 실시간 알림 기능</li>
-        <li><strong>자동 시작 유틸</strong> – 설치 시 윈도우 시작 프로그램 등록 기능</li>
-        <li><strong>DB 설정 관리 도구</strong> – 설정 파일 기반의 DB 연결 관리기</li>
-      </ul>
+      <div class="project-card">
+        <h3>WPF 기반 알림 시스템</h3>
+        <p>TCP 통신 기반의 실시간 알림 기능 구현</p>
+      </div>
+      <div class="project-card">
+        <h3>자동 시작 유틸</h3>
+        <p>설치 시 Windows 시작 프로그램에 자동 등록 기능 구현</p>
+      </div>
+      <div class="project-card">
+        <h3>DB 설정 관리 도구</h3>
+        <p>설정 파일 기반의 DB 연결 관리 유틸리티 개발</p>
+      </div>
     </div>
 
-    <div class="section">
+    <div class="section" id="links">
       <h2>🔗 링크</h2>
-      <ul>
-        <li><a href="https://github.com/Song-Minsub" target="_blank">GitHub 프로필 바로가기</a></li>
-      </ul>
+      <p><a href="https://github.com/Song-Minsub" target="_blank">GitHub 프로필 바로가기</a></p>
     </div>
   </div>
+
+  <footer>
+    &copy; 2025 Song Minsub. All rights reserved.
+  </footer>
 </body>
 </html>
